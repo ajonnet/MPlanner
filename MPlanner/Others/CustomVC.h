@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Mission.h"
 
 @interface CustomVC : UIViewController
+
+@property (nonatomic, strong) Mission *mMission;
 
 @end
