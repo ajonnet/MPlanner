@@ -46,12 +46,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" e.g. Choose College" minimumFontSize="17" clearButtonMode="whileEditing" id="YLr-bx-5sc">
-                                <rect key="frame" x="20" y="97" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State Your Mission Here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dtk-ZO-jHU">
                                 <rect key="frame" x="20" y="71" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -68,13 +62,35 @@
                                     <segue destination="i4e-NU-t5q" kind="push" identifier="NextBt" id="Jqa-C4-3iI"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="XHb-bL-dCV">
+                                <rect key="frame" x="0.0" y="97" width="320" height="413"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="OxS-21-7RT">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" e.g. Choose College" minimumFontSize="17" clearButtonMode="whileEditing" id="YLr-bx-5sc">
+                                                <rect key="frame" x="20" y="0.0" width="280" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="aMz-cL-pg2"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="scvw" destination="XHb-bL-dCV" id="5s4-wN-bbi"/>
+                        <outlet property="scvwContentView" destination="OxS-21-7RT" id="VGG-9J-W4h"/>
                         <outlet property="tfMission" destination="YLr-bx-5sc" id="RGt-FP-ZEi"/>
+                        <outletCollection property="InputItemsArr" destination="YLr-bx-5sc" id="z1w-Mk-IcB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EvW-SP-x3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
