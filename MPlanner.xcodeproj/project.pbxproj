@@ -29,6 +29,8 @@
 		2895E116197BCBAB00107C78 /* PrioritizeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E115197BCBAB00107C78 /* PrioritizeVC.m */; };
 		2895E119197BCBBD00107C78 /* VerdictVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E118197BCBBD00107C78 /* VerdictVC.m */; };
 		2895E11C197BCC9300107C78 /* CustomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E11B197BCC9300107C78 /* CustomVC.m */; };
+		2895E122197BF22B00107C78 /* KeybAccView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2895E11F197BF22B00107C78 /* KeybAccView.xib */; };
+		2895E123197BF22B00107C78 /* KeyboardHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E121197BF22B00107C78 /* KeyboardHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,9 @@
 		2895E118197BCBBD00107C78 /* VerdictVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerdictVC.m; sourceTree = "<group>"; };
 		2895E11A197BCC9300107C78 /* CustomVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomVC.h; sourceTree = "<group>"; };
 		2895E11B197BCC9300107C78 /* CustomVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomVC.m; sourceTree = "<group>"; };
+		2895E11F197BF22B00107C78 /* KeybAccView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeybAccView.xib; sourceTree = "<group>"; };
+		2895E120197BF22B00107C78 /* KeyboardHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardHandler.h; sourceTree = "<group>"; };
+		2895E121197BF22B00107C78 /* KeyboardHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +139,7 @@
 		2895E0D4197B9D0900107C78 /* MPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				2895E11D197BF1B600107C78 /* ThirdParty */,
 				2895E10A197BCAD900107C78 /* Others */,
 				2895E103197BBC8600107C78 /* Model */,
 				2895E109197BCA9F00107C78 /* ScreenVCs */,
@@ -210,6 +216,24 @@
 				2895E11B197BCC9300107C78 /* CustomVC.m */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		2895E11D197BF1B600107C78 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				2895E11E197BF22B00107C78 /* KeyboardHandler */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		2895E11E197BF22B00107C78 /* KeyboardHandler */ = {
+			isa = PBXGroup;
+			children = (
+				2895E11F197BF22B00107C78 /* KeybAccView.xib */,
+				2895E120197BF22B00107C78 /* KeyboardHandler.h */,
+				2895E121197BF22B00107C78 /* KeyboardHandler.m */,
+			);
+			path = KeyboardHandler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2895E0E7197B9D0900107C78 /* Images.xcassets in Resources */,
+				2895E122197BF22B00107C78 /* KeybAccView.xib in Resources */,
 				2895E0D9197B9D0900107C78 /* InfoPlist.strings in Resources */,
 				2895E0E2197B9D0900107C78 /* Main.storyboard in Resources */,
 			);
@@ -311,6 +336,7 @@
 			files = (
 				2895E0E5197B9D0900107C78 /* ViewController.m in Sources */,
 				2895E0DF197B9D0900107C78 /* AppDelegate.m in Sources */,
+				2895E123197BF22B00107C78 /* KeyboardHandler.m in Sources */,
 				2895E106197BBCB900107C78 /* Mission.m in Sources */,
 				2895E116197BCBAB00107C78 /* PrioritizeVC.m in Sources */,
 				2895E119197BCBBD00107C78 /* VerdictVC.m in Sources */,
