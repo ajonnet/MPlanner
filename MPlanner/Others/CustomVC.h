@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Mission.h"
 
+#define NextBtId @"NextBt"
+
 @interface CustomVC : UIViewController
 
 @property (nonatomic, strong) Mission *mMission;
 
+-(void) showErrorWithMsg:(NSString *) msg;
 @end

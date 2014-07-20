@@ -65,7 +65,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="i4e-NU-t5q" kind="push" id="Jqa-C4-3iI"/>
+                                    <segue destination="i4e-NU-t5q" kind="push" identifier="NextBt" id="Jqa-C4-3iI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -73,6 +73,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="aMz-cL-pg2"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="tfMission" destination="YLr-bx-5sc" id="RGt-FP-ZEi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EvW-SP-x3Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
