@@ -51,4 +51,14 @@
 }
 */
 
+#pragma mark - IBAction methods
+- (IBAction)onBackBtClick:(id)sender {
+    
+    //Pop current object Navigation Stack
+    if (self.navigationController) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+
 @end
