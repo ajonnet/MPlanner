@@ -66,7 +66,7 @@
     
     //Register keyboard AccessoryView for the inputItems
     for (UITextField *tf in inputItems) {
-        tf.inputAccessoryView = keybAccessory;
+        //tf.inputAccessoryView = keybAccessory;
         
         //Register for Notifications
         if ([tf isKindOfClass:[UITextView class]]) {
