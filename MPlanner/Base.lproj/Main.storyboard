@@ -31,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="739" y="29"/>
         </scene>
-        <!--View Controller-->
+        <!--MissionVC-->
         <scene sceneID="YFX-WX-sg1">
             <objects>
-                <viewController id="Cel-7D-Llk" sceneMemberID="viewController">
+                <viewController id="Cel-7D-Llk" customClass="MissionVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZuJ-r8-P7P">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="1113" y="29"/>
         </scene>
-        <!--View Controller-->
+        <!--OptionsVC-->
         <scene sceneID="rFg-t9-has">
             <objects>
-                <viewController id="i4e-NU-t5q" sceneMemberID="viewController">
+                <viewController id="i4e-NU-t5q" customClass="OptionsVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pkO-dm-WLD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -142,10 +142,10 @@
             </objects>
             <point key="canvasLocation" x="1482" y="29"/>
         </scene>
-        <!--View Controller-->
+        <!--CriterionsVC-->
         <scene sceneID="pwj-u2-5a0">
             <objects>
-                <viewController id="QyY-Jj-wdj" sceneMemberID="viewController">
+                <viewController id="QyY-Jj-wdj" customClass="CriterionsVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PvL-7y-82d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -314,10 +314,10 @@
             </objects>
             <point key="canvasLocation" x="1855" y="29"/>
         </scene>
-        <!--View Controller-->
+        <!--PrioritizeVC-->
         <scene sceneID="g26-d9-Bas">
             <objects>
-                <viewController id="s3f-H3-mKs" sceneMemberID="viewController">
+                <viewController id="s3f-H3-mKs" customClass="PrioritizeVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sCn-xP-vrx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -465,10 +465,10 @@
             </objects>
             <point key="canvasLocation" x="2271" y="29"/>
         </scene>
-        <!--View Controller-->
+        <!--VerdictVC-->
         <scene sceneID="1ER-Cv-h25">
             <objects>
-                <viewController id="oDg-ZX-WRV" sceneMemberID="viewController">
+                <viewController id="oDg-ZX-WRV" customClass="VerdictVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ej-Ku-4wh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

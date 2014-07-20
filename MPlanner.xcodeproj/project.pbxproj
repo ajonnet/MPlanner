@@ -23,6 +23,11 @@
 		2895E0FA197B9D0900107C78 /* MPlannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E0F9197B9D0900107C78 /* MPlannerTests.m */; };
 		2895E106197BBCB900107C78 /* Mission.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E105197BBCB900107C78 /* Mission.m */; };
 		2895E107197BBCB900107C78 /* Mission.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E105197BBCB900107C78 /* Mission.m */; };
+		2895E10D197BCB5A00107C78 /* MissionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E10C197BCB5A00107C78 /* MissionVC.m */; };
+		2895E110197BCB7300107C78 /* OptionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E10F197BCB7300107C78 /* OptionsVC.m */; };
+		2895E113197BCB8F00107C78 /* CriterionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E112197BCB8F00107C78 /* CriterionsVC.m */; };
+		2895E116197BCBAB00107C78 /* PrioritizeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E115197BCBAB00107C78 /* PrioritizeVC.m */; };
+		2895E119197BCBBD00107C78 /* VerdictVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E118197BCBBD00107C78 /* VerdictVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +62,16 @@
 		2895E0F9197B9D0900107C78 /* MPlannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPlannerTests.m; sourceTree = "<group>"; };
 		2895E104197BBCB900107C78 /* Mission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission.h; sourceTree = "<group>"; };
 		2895E105197BBCB900107C78 /* Mission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission.m; sourceTree = "<group>"; };
+		2895E10B197BCB5A00107C78 /* MissionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionVC.h; sourceTree = "<group>"; };
+		2895E10C197BCB5A00107C78 /* MissionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionVC.m; sourceTree = "<group>"; };
+		2895E10E197BCB7300107C78 /* OptionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsVC.h; sourceTree = "<group>"; };
+		2895E10F197BCB7300107C78 /* OptionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsVC.m; sourceTree = "<group>"; };
+		2895E111197BCB8F00107C78 /* CriterionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CriterionsVC.h; sourceTree = "<group>"; };
+		2895E112197BCB8F00107C78 /* CriterionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CriterionsVC.m; sourceTree = "<group>"; };
+		2895E114197BCBAB00107C78 /* PrioritizeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrioritizeVC.h; sourceTree = "<group>"; };
+		2895E115197BCBAB00107C78 /* PrioritizeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrioritizeVC.m; sourceTree = "<group>"; };
+		2895E117197BCBBD00107C78 /* VerdictVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerdictVC.h; sourceTree = "<group>"; };
+		2895E118197BCBBD00107C78 /* VerdictVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerdictVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +131,9 @@
 		2895E0D4197B9D0900107C78 /* MPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				2895E10A197BCAD900107C78 /* Others */,
 				2895E103197BBC8600107C78 /* Model */,
+				2895E109197BCA9F00107C78 /* ScreenVCs */,
 				2895E0DD197B9D0900107C78 /* AppDelegate.h */,
 				2895E0DE197B9D0900107C78 /* AppDelegate.m */,
 				2895E0E0197B9D0900107C78 /* Main.storyboard */,
@@ -164,6 +181,30 @@
 				2895E105197BBCB900107C78 /* Mission.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2895E109197BCA9F00107C78 /* ScreenVCs */ = {
+			isa = PBXGroup;
+			children = (
+				2895E10B197BCB5A00107C78 /* MissionVC.h */,
+				2895E10C197BCB5A00107C78 /* MissionVC.m */,
+				2895E10E197BCB7300107C78 /* OptionsVC.h */,
+				2895E10F197BCB7300107C78 /* OptionsVC.m */,
+				2895E111197BCB8F00107C78 /* CriterionsVC.h */,
+				2895E112197BCB8F00107C78 /* CriterionsVC.m */,
+				2895E114197BCBAB00107C78 /* PrioritizeVC.h */,
+				2895E115197BCBAB00107C78 /* PrioritizeVC.m */,
+				2895E117197BCBBD00107C78 /* VerdictVC.h */,
+				2895E118197BCBBD00107C78 /* VerdictVC.m */,
+			);
+			path = ScreenVCs;
+			sourceTree = "<group>";
+		};
+		2895E10A197BCAD900107C78 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +307,12 @@
 				2895E0E5197B9D0900107C78 /* ViewController.m in Sources */,
 				2895E0DF197B9D0900107C78 /* AppDelegate.m in Sources */,
 				2895E106197BBCB900107C78 /* Mission.m in Sources */,
+				2895E116197BCBAB00107C78 /* PrioritizeVC.m in Sources */,
+				2895E119197BCBBD00107C78 /* VerdictVC.m in Sources */,
 				2895E0DB197B9D0900107C78 /* main.m in Sources */,
+				2895E113197BCB8F00107C78 /* CriterionsVC.m in Sources */,
+				2895E10D197BCB5A00107C78 /* MissionVC.m in Sources */,
+				2895E110197BCB7300107C78 /* OptionsVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
