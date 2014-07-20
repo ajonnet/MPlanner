@@ -99,6 +99,9 @@
                                 <state key="normal" title="NEXT">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="QyY-Jj-wdj" kind="push" id="BhB-TF-Ajb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State Your Options Here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1RX-Yf-1ED">
                                 <rect key="frame" x="20" y="71" width="280" height="21"/>
@@ -305,6 +308,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="b3E-9f-sGq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNw-69-MAR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
