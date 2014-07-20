@@ -1,5 +1,5 @@
 //
-//  CriterionsVC.h
+//  VCCustomizer.h
 //  MPlanner
 //
 //  Created by Amit Jain on 20/07/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CriterionsVC : CustomVC
+@interface CustomVC : UIViewController
 
 @end

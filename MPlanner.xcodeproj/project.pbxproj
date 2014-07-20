@@ -28,6 +28,7 @@
 		2895E113197BCB8F00107C78 /* CriterionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E112197BCB8F00107C78 /* CriterionsVC.m */; };
 		2895E116197BCBAB00107C78 /* PrioritizeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E115197BCBAB00107C78 /* PrioritizeVC.m */; };
 		2895E119197BCBBD00107C78 /* VerdictVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E118197BCBBD00107C78 /* VerdictVC.m */; };
+		2895E11C197BCC9300107C78 /* CustomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E11B197BCC9300107C78 /* CustomVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		2895E115197BCBAB00107C78 /* PrioritizeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrioritizeVC.m; sourceTree = "<group>"; };
 		2895E117197BCBBD00107C78 /* VerdictVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerdictVC.h; sourceTree = "<group>"; };
 		2895E118197BCBBD00107C78 /* VerdictVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerdictVC.m; sourceTree = "<group>"; };
+		2895E11A197BCC9300107C78 /* CustomVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomVC.h; sourceTree = "<group>"; };
+		2895E11B197BCC9300107C78 /* CustomVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +206,8 @@
 		2895E10A197BCAD900107C78 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				2895E11A197BCC9300107C78 /* CustomVC.h */,
+				2895E11B197BCC9300107C78 /* CustomVC.m */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 				2895E113197BCB8F00107C78 /* CriterionsVC.m in Sources */,
 				2895E10D197BCB5A00107C78 /* MissionVC.m in Sources */,
 				2895E110197BCB7300107C78 /* OptionsVC.m in Sources */,
+				2895E11C197BCC9300107C78 /* CustomVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

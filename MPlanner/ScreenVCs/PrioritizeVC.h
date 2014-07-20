@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PrioritizeVC : UIViewController
+@interface PrioritizeVC : CustomVC
 
 @end

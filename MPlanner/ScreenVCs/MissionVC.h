@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MissionVC : UIViewController
+@interface MissionVC : CustomVC
 
 @end

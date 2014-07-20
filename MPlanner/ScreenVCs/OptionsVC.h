@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OptionsVC : UIViewController
+@interface OptionsVC : CustomVC
 
 @end

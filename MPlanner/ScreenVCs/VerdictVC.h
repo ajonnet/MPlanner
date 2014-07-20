@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VerdictVC : UIViewController
+@interface VerdictVC : CustomVC
 
 @end
