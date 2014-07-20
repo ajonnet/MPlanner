@@ -21,6 +21,8 @@
 		2895E0F0197B9D0900107C78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2895E0D2197B9D0900107C78 /* UIKit.framework */; };
 		2895E0F8197B9D0900107C78 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2895E0F6197B9D0900107C78 /* InfoPlist.strings */; };
 		2895E0FA197B9D0900107C78 /* MPlannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E0F9197B9D0900107C78 /* MPlannerTests.m */; };
+		2895E106197BBCB900107C78 /* Mission.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E105197BBCB900107C78 /* Mission.m */; };
+		2895E107197BBCB900107C78 /* Mission.m in Sources */ = {isa = PBXBuildFile; fileRef = 2895E105197BBCB900107C78 /* Mission.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		2895E0F5197B9D0900107C78 /* MPlannerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MPlannerTests-Info.plist"; sourceTree = "<group>"; };
 		2895E0F7197B9D0900107C78 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2895E0F9197B9D0900107C78 /* MPlannerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MPlannerTests.m; sourceTree = "<group>"; };
+		2895E104197BBCB900107C78 /* Mission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission.h; sourceTree = "<group>"; };
+		2895E105197BBCB900107C78 /* Mission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		2895E0D4197B9D0900107C78 /* MPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				2895E103197BBC8600107C78 /* Model */,
 				2895E0DD197B9D0900107C78 /* AppDelegate.h */,
 				2895E0DE197B9D0900107C78 /* AppDelegate.m */,
 				2895E0E0197B9D0900107C78 /* Main.storyboard */,
@@ -150,6 +155,15 @@
 				2895E0F6197B9D0900107C78 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2895E103197BBC8600107C78 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2895E104197BBCB900107C78 /* Mission.h */,
+				2895E105197BBCB900107C78 /* Mission.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +265,7 @@
 			files = (
 				2895E0E5197B9D0900107C78 /* ViewController.m in Sources */,
 				2895E0DF197B9D0900107C78 /* AppDelegate.m in Sources */,
+				2895E106197BBCB900107C78 /* Mission.m in Sources */,
 				2895E0DB197B9D0900107C78 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2895E107197BBCB900107C78 /* Mission.m in Sources */,
 				2895E0FA197B9D0900107C78 /* MPlannerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
