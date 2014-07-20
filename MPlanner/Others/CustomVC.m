@@ -7,9 +7,12 @@
 //
 
 #import "CustomVC.h"
+#import "KeyboardHandler.h"
 
 @interface CustomVC ()
-
+{
+    KeyboardHandler *keybHandler;
+}
 @end
 
 @implementation CustomVC
@@ -31,6 +34,21 @@
     //Hide the Navigation Bar
     if (self.navigationController) {
         self.navigationController.navigationBarHidden = YES;
+    }
+    
+    //Initializing Keyboard handler
+    keybHandler = [[KeyboardHandler alloc] init];
+    keybHandler.inputItems = self.InputItemsArr;
+    keybHandler.hostingSCVW = self.scvw;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    //configuring the scrollView
+    if (self.scvw && self.scvwContentView) {
+        self.scvw.contentSize = self.scvwContentView.bounds.size;
     }
 }
 

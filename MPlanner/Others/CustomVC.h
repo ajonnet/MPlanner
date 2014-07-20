@@ -16,4 +16,9 @@
 @property (nonatomic, strong) Mission *mMission;
 
 -(void) showErrorWithMsg:(NSString *) msg;
+
+//Keyboard Handler related items
+@property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *InputItemsArr;
+@property (weak, nonatomic) IBOutlet UIScrollView *scvw;
+@property (strong, nonatomic) IBOutlet UIView *scvwContentView;
 @end
