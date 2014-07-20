@@ -27,6 +27,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    //Hide the Navigation Bar
+    if (self.navigationController) {
+        self.navigationController.navigationBarHidden = YES;
+    }
 }
 
 - (void)didReceiveMemoryWarning
