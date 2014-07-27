@@ -8,19 +8,38 @@
 
 #import <Foundation/Foundation.h>
 
+@class Option;
+@class Criterion;
+
 @interface Mission : NSObject
 
-@property (nonatomic, strong)           NSString *mTitle;
-@property (nonatomic, strong)           NSArray  *mOptions;
-@property (nonatomic, strong)           NSArray  *mCriterions;
-@property (nonatomic, strong, readonly) NSArray  *mRatings;
-@property (nonatomic, strong, readonly) NSArray  *mPriorities;
+@property (nonatomic, strong)   NSString *mTitle;
+@property (nonatomic, strong)   NSArray  *mOptions;
+@property (nonatomic, strong)   NSArray  *mCriterions;
 
--(BOOL) setRating:(NSNumber *) rating
-     forCriterion:(NSUInteger) criterionIdx
-         ofOption:(NSUInteger) optionIdx;
+//Order
+-(void) setOrder:(NSComparisonResult) order
+   forCriterionA:(Criterion *) criterionA
+   andCriterionB:(Criterion *) criterionB;
+-(NSComparisonResult) getOrderBtwCriterionA:(Criterion *) criterionA
+                              andCriterionB:(Criterion *) criterionB;
 
--(BOOL) setOrder:(NSComparisonResult) order
-   forCriterionA:(NSUInteger) criterionAIdx
-   andCriterionB:(NSUInteger) criterionBIdx;
+//Rating
+-(void) setRating:(NSNumber *) rating
+      ofCriterion:(Criterion *) criterion
+        forOption:(Option *) option;
+-(NSNumber *) getRatingOfCriterion:(Criterion *) criterion
+                         forOption:(Option *) option;
+
+-(Option *) renderBestOption;
+@end
+
+@interface Option : NSObject
+
+@property (nonatomic, strong) NSString *mTitle;
+@end
+
+@interface Criterion : NSObject
+
+@property (nonatomic, strong) NSString *mTitle;
 @end
