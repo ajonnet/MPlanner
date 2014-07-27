@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2855AC3E19852C740000D2CC /* MissionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2855AC3D19852C740000D2CC /* MissionTest.m */; };
 		2895E0CF197B9D0900107C78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2895E0CE197B9D0900107C78 /* Foundation.framework */; };
 		2895E0D1197B9D0900107C78 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2895E0D0197B9D0900107C78 /* CoreGraphics.framework */; };
 		2895E0D3197B9D0900107C78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2895E0D2197B9D0900107C78 /* UIKit.framework */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2855AC3D19852C740000D2CC /* MissionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionTest.m; sourceTree = "<group>"; };
 		2895E0CB197B9D0900107C78 /* MPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2895E0CE197B9D0900107C78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2895E0D0197B9D0900107C78 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				2895E0F9197B9D0900107C78 /* MPlannerTests.m */,
+				2855AC3D19852C740000D2CC /* MissionTest.m */,
 				2895E0F4197B9D0900107C78 /* Supporting Files */,
 			);
 			path = MPlannerTests;
@@ -352,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2855AC3E19852C740000D2CC /* MissionTest.m in Sources */,
 				2895E107197BBCB900107C78 /* Mission.m in Sources */,
 				2895E0FA197B9D0900107C78 /* MPlannerTests.m in Sources */,
 			);
@@ -552,6 +556,7 @@
 				2895E0FF197B9D0900107C78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2895E100197B9D0900107C78 /* Build configuration list for PBXNativeTarget "MPlannerTests" */ = {
 			isa = XCConfigurationList;
@@ -560,6 +565,7 @@
 				2895E102197B9D0900107C78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
