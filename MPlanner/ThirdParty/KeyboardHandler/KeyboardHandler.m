@@ -45,7 +45,8 @@
 {
     self = [super init];
     if (self) {
-        keyboardHasAppeard = NO;
+        self->keyboardHasAppeard = NO;
+        self->_showNavigationAccessory = YES;
     }
     return self;
 }
@@ -57,16 +58,29 @@
 #pragma mark properties setters and getters methods
 -(void)setInputItems:(NSArray *)inputItems{
     _inputItems = nil;
-    _inputItems = inputItems;
     
-    //LazyLoading of Keyboard AccessoryView
-    if (nil == keybAccessory) { 
-        [self loadKeybAccessoryToolBar];
-    }
+    //Sort the input Items in XY Space from Top to bottom and Left to Right
+    NSArray *sortedInputItems = [inputItems sortedArrayUsingComparator:^NSComparisonResult(UIView *obj1, UIView *obj2) {
+        NSComparisonResult result = NSOrderedAscending;
+        
+        if (obj1.frame.origin.y >= obj2.frame.origin.y) {
+            if (obj1.frame.origin.y == obj2.frame.origin.y) {
+                if (obj1.frame.origin.x >= obj2.frame.origin.x) {
+                    result = NSOrderedDescending;
+                }else {
+                    result = NSOrderedAscending;
+                }
+            }else {
+                result = NSOrderedDescending;
+            }
+        }
+        
+        return result;
+    }];
+    _inputItems = sortedInputItems;
     
-    //Register keyboard AccessoryView for the inputItems
-    for (UITextField *tf in inputItems) {
-        //tf.inputAccessoryView = keybAccessory;
+    //Register Notifications for the inputItems
+    for (UITextField *tf in _inputItems) {
         
         //Register for Notifications
         if ([tf isKindOfClass:[UITextView class]]) {
@@ -76,6 +90,15 @@
             //Registering for various TextField notifications
             [self registerForUITextFieldNotificationsForTextField:tf];
         }
+    }
+    
+    //Render Navigation AccessoryView for Input Items
+    [self renderNavigationAccessoryViewForInputItems:_inputItems asEnabled:_showNavigationAccessory];
+    
+
+    //Detecting the nearest SCVW which can act as HostingSCVW for all Input Items
+    if (!self.hostingSCVW) {
+        self.hostingSCVW = [self getNearestHostingSCVWForInputItems:_inputItems];
     }
 }
 
@@ -92,6 +115,22 @@
     [self.hostingSCVW addGestureRecognizer:singleTap];
 }
 
+-(void)setShowNavigationAccessory:(BOOL)showNavigationAccessory
+{
+    if (_showNavigationAccessory == showNavigationAccessory) {
+        return;
+    }
+    
+    _showNavigationAccessory = showNavigationAccessory;
+    
+    //Return if No Input Items set
+    if (nil == _inputItems || _inputItems.count == 0) {
+        return;
+    }
+    
+    //Render Navigation AccessoryV for Input Items
+    [self renderNavigationAccessoryViewForInputItems:_inputItems asEnabled:_showNavigationAccessory];
+}
 
 #pragma mark UIGestureRecognizerDelegate methods
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
@@ -310,5 +349,79 @@
 
 -(void)endEditing{
     [self.hostingSCVW endEditing:YES];
+}
+
+-(void) renderNavigationAccessoryViewForInputItems:(NSArray *) inputItems asEnabled:(BOOL) enabled
+{
+    //Assigning Keyboard accessory View
+    if(enabled && (inputItems.count > 1)) { //Enable
+        
+        for (UITextField *tf in inputItems) {
+            
+            //LazyLoading of Keyboard AccessoryView
+            if (nil == keybAccessory) {
+                [self loadKeybAccessoryToolBar];
+            }
+            
+            tf.inputAccessoryView = keybAccessory;
+        }
+        
+    }else { //Disable
+        
+        for (UITextField *tf in inputItems) {
+            tf.inputAccessoryView = nil;
+        }
+    }
+}
+
+-(UIScrollView *) getNearestHostingSCVWForInputItems:(NSArray *) inputItems
+{
+    
+    //Block to look Up TargetView Heirarchy if it contains the the cadidateView
+    __block BOOL (^existInViewHeirarchy)(id,id);
+    existInViewHeirarchy = ^(UIView *targetV, UIView *candidateV){
+        //Seraching In Breadth First
+        for (UIView *subV in targetV.subviews) {
+            if ([candidateV isEqual:subV]) {
+                return YES;
+            }
+        }
+        
+        //Searching in Depth
+        for (UIView *subV in targetV.subviews) {
+            UIView *newTargetView = subV;
+            if (YES == existInViewHeirarchy(newTargetView, candidateV)) {
+                return YES;
+            }
+        }
+        
+        return NO;
+    };
+    
+    //Looking up for Hosting SCVW
+    UIScrollView *hostSCVW = inputItems[0];
+    while (hostSCVW.superview != nil) {
+        BOOL hostSCVWFound = NO;
+        
+        if ([hostSCVW isKindOfClass:[UIScrollView class]]) {
+            hostSCVWFound = YES;
+            
+            //Checking if all Input Views can be treated as subViews of the considered HostingSCVW
+            for (UIView *inputV in _inputItems) {
+                if (!existInViewHeirarchy(hostSCVW,inputV)) {
+                    hostSCVWFound = NO;
+                    break;
+                }
+            }
+        }
+        
+        if (hostSCVWFound) { //Found
+            break;
+        }else { //Not Found
+            hostSCVW = (UIScrollView *)hostSCVW.superview;
+        }
+    }
+    
+    return hostSCVW;
 }
 @end

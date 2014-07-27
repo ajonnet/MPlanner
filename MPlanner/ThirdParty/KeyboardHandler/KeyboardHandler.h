@@ -10,6 +10,7 @@
 
 @interface KeyboardHandler : NSObject <UIGestureRecognizerDelegate>
 
-@property (nonatomic,strong) NSArray *inputItems;
+@property (nonatomic,copy) NSArray *inputItems;
 @property (nonatomic,strong) UIScrollView *hostingSCVW;
+@property (nonatomic, readwrite) BOOL showNavigationAccessory;
 @end
