@@ -66,7 +66,7 @@
         return;
     }
     
-    //Creating the new relation
+    //Creating and Adding the new relation
     CriterionOrder *newCriterionOrder = [[CriterionOrder alloc] init];
     newCriterionOrder.mCriterionA = criterionA;
     newCriterionOrder.mCriterionB = criterionB;
@@ -112,11 +112,12 @@
         return;
     }
     
-    //Creating the new relation
+    //Creating and adding the new relation
     Rating *newRatingObj = [[Rating alloc] init];
     newRatingObj.mValue = rating;
     newRatingObj.mCriterion = criterion;
     newRatingObj.mOption = option;
+    [ratings addObject:newRatingObj];
 }
 
 -(NSNumber *) getRatingOfCriterion:(Criterion *) criterion
@@ -206,22 +207,23 @@
         
         float optionWeight = [optionWeights[i] floatValue];
  
+        
+        if (optionWeight == bestOptionWeight) {
+            flagMultipleBestOption = true;
+            continue;
+        }
+        
         if (optionWeight > bestOptionWeight) {
             bestOption = _mOptions[i];
             bestOptionWeight = optionWeight;
             
             flagMultipleBestOption = false;
         }
-        
-        if (optionWeight == bestOptionWeight) {
-            flagMultipleBestOption = true;
-        }
-        
     }
     
     //Only single best option should be there
     if (flagMultipleBestOption) {
-        NSLog(@"Best Option cant be evaluated as there is tie");
+        NSLog(@"Best Option cant be evaluated as there is a Tie");
         return nil;
     }
     
@@ -312,4 +314,26 @@
         [criterionOrders removeObject:obj];
     }];
 }
+@end
+
+@implementation Rating
+-(NSString *)description {
+    NSString *str = [NSString stringWithFormat:@"[%@]->Cr[%@]Op[%@]",_mValue,_mCriterion,_mOption];
+    return str;
+}
+@end
+
+@implementation CriterionOrder
+-(NSString *)description {
+    NSString *str = [NSString stringWithFormat:@"[%d]->CrA[%@]crB[%@]",_mOrder,_mCriterionA,_mCriterionB];
+    return str;
+}
+@end
+
+@implementation Option
+-(NSString *)description { return _mTitle; }
+@end
+
+@implementation Criterion
+-(NSString *)description { return _mTitle; }
 @end
