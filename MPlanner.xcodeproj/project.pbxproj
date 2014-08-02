@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		281BC91F198CFC92007D904E /* OptionInputV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 281BC91E198CFC92007D904E /* OptionInputV.xib */; };
+		281BC922198CFD40007D904E /* OptionInputV.m in Sources */ = {isa = PBXBuildFile; fileRef = 281BC921198CFD40007D904E /* OptionInputV.m */; };
 		2855AC3E19852C740000D2CC /* MissionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2855AC3D19852C740000D2CC /* MissionTest.m */; };
 		2855AC4119853B420000D2CC /* KeyboardHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2855AC4019853B420000D2CC /* KeyboardHandler.m */; };
 		2895E0CF197B9D0900107C78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2895E0CE197B9D0900107C78 /* Foundation.framework */; };
@@ -45,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		281BC91E198CFC92007D904E /* OptionInputV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionInputV.xib; sourceTree = "<group>"; };
+		281BC920198CFD40007D904E /* OptionInputV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionInputV.h; sourceTree = "<group>"; };
+		281BC921198CFD40007D904E /* OptionInputV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionInputV.m; sourceTree = "<group>"; };
 		2855AC3D19852C740000D2CC /* MissionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionTest.m; sourceTree = "<group>"; };
 		2855AC3F19853B420000D2CC /* KeyboardHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardHandler.h; sourceTree = "<group>"; };
 		2855AC4019853B420000D2CC /* KeyboardHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardHandler.m; sourceTree = "<group>"; };
@@ -108,6 +113,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		281BC91D198CFC4E007D904E /* SubComps */ = {
+			isa = PBXGroup;
+			children = (
+				281BC923198D05D4007D904E /* OptionInputV */,
+			);
+			path = SubComps;
+			sourceTree = "<group>";
+		};
+		281BC923198D05D4007D904E /* OptionInputV */ = {
+			isa = PBXGroup;
+			children = (
+				281BC91E198CFC92007D904E /* OptionInputV.xib */,
+				281BC920198CFD40007D904E /* OptionInputV.h */,
+				281BC921198CFD40007D904E /* OptionInputV.m */,
+			);
+			name = OptionInputV;
+			sourceTree = "<group>";
+		};
 		2895E0C2197B9D0900107C78 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +167,7 @@
 				2895E11D197BF1B600107C78 /* ThirdParty */,
 				2895E10A197BCAD900107C78 /* Others */,
 				2895E103197BBC8600107C78 /* Model */,
+				281BC91D198CFC4E007D904E /* SubComps */,
 				2895E109197BCA9F00107C78 /* ScreenVCs */,
 				2895E0DD197B9D0900107C78 /* AppDelegate.h */,
 				2895E0DE197B9D0900107C78 /* AppDelegate.m */,
@@ -317,6 +341,7 @@
 			files = (
 				2895E0E7197B9D0900107C78 /* Images.xcassets in Resources */,
 				2895E122197BF22B00107C78 /* KeybAccView.xib in Resources */,
+				281BC91F198CFC92007D904E /* OptionInputV.xib in Resources */,
 				2895E0D9197B9D0900107C78 /* InfoPlist.strings in Resources */,
 				2895E0E2197B9D0900107C78 /* Main.storyboard in Resources */,
 			);
@@ -337,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				281BC922198CFD40007D904E /* OptionInputV.m in Sources */,
 				2895E0E5197B9D0900107C78 /* ViewController.m in Sources */,
 				2895E0DF197B9D0900107C78 /* AppDelegate.m in Sources */,
 				2855AC4119853B420000D2CC /* KeyboardHandler.m in Sources */,
