@@ -59,25 +59,25 @@
     missionObj.mCriterions = @[criterion1,criterion2,criterion3,criterion4];
     
     //Setting Rating of Criterions for College 1
-    [missionObj setRating:@(2) ofCriterion:criterion1 forOption:college1];
-    [missionObj setRating:@(8) ofCriterion:criterion2 forOption:college1];
-    [missionObj setRating:@(5) ofCriterion:criterion3 forOption:college1];
-    [missionObj setRating:@(5) ofCriterion:criterion4 forOption:college1];
+    [missionObj setRating:@(7) ofCriterion:criterion1 forOption:college1];
+    [missionObj setRating:@(3) ofCriterion:criterion2 forOption:college1];
+    [missionObj setRating:@(1) ofCriterion:criterion3 forOption:college1];
+    [missionObj setRating:@(2) ofCriterion:criterion4 forOption:college1];
 
     //Setting Rating of Criterions for College 2
-    [missionObj setRating:@(6) ofCriterion:criterion1 forOption:college2];
+    [missionObj setRating:@(8) ofCriterion:criterion1 forOption:college2];
     [missionObj setRating:@(7) ofCriterion:criterion2 forOption:college2];
-    [missionObj setRating:@(4) ofCriterion:criterion3 forOption:college2];
-    [missionObj setRating:@(4) ofCriterion:criterion4 forOption:college2];
+    [missionObj setRating:@(6) ofCriterion:criterion3 forOption:college2];
+    [missionObj setRating:@(5) ofCriterion:criterion4 forOption:college2];
 
     
     //Setting relative order among various Criterions
-    [missionObj setOrder:NSOrderedSame forCriterionA:criterion1 andCriterionB:criterion2];
-    [missionObj setOrder:NSOrderedSame forCriterionA:criterion1 andCriterionB:criterion3];
+    [missionObj setOrder:NSOrderedDescending forCriterionA:criterion1 andCriterionB:criterion2];
+    [missionObj setOrder:NSOrderedAscending forCriterionA:criterion1 andCriterionB:criterion3];
     [missionObj setOrder:NSOrderedSame forCriterionA:criterion1 andCriterionB:criterion4];
-    [missionObj setOrder:NSOrderedSame forCriterionA:criterion2 andCriterionB:criterion3];
+    [missionObj setOrder:NSOrderedAscending forCriterionA:criterion2 andCriterionB:criterion3];
     [missionObj setOrder:NSOrderedSame forCriterionA:criterion2 andCriterionB:criterion4];
-    [missionObj setOrder:NSOrderedSame forCriterionA:criterion3 andCriterionB:criterion4];
+    [missionObj setOrder:NSOrderedDescending forCriterionA:criterion3 andCriterionB:criterion4];
     
     Option *bestOption = [missionObj renderBestOption];
     NSLog(@"BestOption: %@",bestOption);
