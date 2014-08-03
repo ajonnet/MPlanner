@@ -17,6 +17,7 @@
 @property (nonatomic, strong) Option *mOption;
 @property (nonatomic, weak) id<OptionInputVDelegate> delegate;
 
++(OptionInputV *) getInstance;
 @end
 
 @protocol OptionInputVDelegate <NSObject>

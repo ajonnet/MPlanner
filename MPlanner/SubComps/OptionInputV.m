@@ -25,6 +25,23 @@
     return self;
 }
 
++(OptionInputV *) getInstance
+{
+    OptionInputV *view = nil;
+    
+    NSArray *bundle = [[NSBundle mainBundle] loadNibNamed:@"OptionInputV" owner:self options:nil];
+    
+    for (id obj in bundle) {
+        if ([obj isKindOfClass:[OptionInputV class]]) {
+            view = (OptionInputV *)obj;
+        }
+    }
+    
+    assert(view != nil);
+    
+    return view;
+}
+
 #pragma mark - IBAction methods
 - (IBAction)onRemoveBtClick:(id)sender {
     if (self.delegate && [self.delegate respondsToSelector:@selector(removeCalledForOptionInputV:)]) {
