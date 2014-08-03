@@ -27,7 +27,9 @@
 
 #pragma mark - IBAction methods
 - (IBAction)onRemoveBtClick:(id)sender {
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(removeCalledForOptionInputV:)]) {
+        [self.delegate removeCalledForOptionInputV:self];
+    }
 }
 
 
