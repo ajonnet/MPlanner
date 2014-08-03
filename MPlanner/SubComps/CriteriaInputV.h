@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CriteriaInputVDelegate;
+
 @interface CriteriaInputV : UIView
 
 @property (nonatomic, readwrite) NSUInteger mIdx;
@@ -15,5 +17,11 @@
 @property (nonatomic, strong) NSArray *mOptions;
 @property (nonatomic, strong) NSArray *mRatings;
 
+@property (nonatomic, weak) id<CriteriaInputVDelegate> delegate;
+
 +(CriteriaInputV *) getInstance;
+@end
+
+@protocol CriteriaInputVDelegate <NSObject>
+-(void) removeCalledForCriteriaInputV:(CriteriaInputV *) obj;
 @end

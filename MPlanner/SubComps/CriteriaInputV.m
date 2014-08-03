@@ -48,6 +48,12 @@
     return view;
 }
 
+#pragma mark - IBAction methods
+- (IBAction)onRemoveBtClick:(id)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(removeCalledForCriteriaInputV:)]) {
+        [self.delegate removeCalledForCriteriaInputV:self];
+    }
+}
 
 #pragma mark - Properties Setters and Getters
 -(void)setMCriterion:(Criterion *)mCriterion
