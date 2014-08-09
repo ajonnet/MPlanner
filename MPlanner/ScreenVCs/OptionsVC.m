@@ -36,6 +36,45 @@
     [self.tableV reloadData];
 }
 
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:NextBtId]) {
+        CustomVC *vc = [segue destinationViewController];
+        vc.mMission = self.mMission;
+    }
+}
+
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([identifier isEqualToString:NextBtId]) {
+        
+        //No Option should be with empty title
+        for (Option *opt in options) {
+
+            opt.mTitle = [opt.mTitle stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            if (opt.mTitle.length == 0) {
+                [self showErrorWithMsg:@"Title is reuqired for option"];
+                return NO;
+            }
+        }
+        
+        //At least two should be there
+        if (options.count < 2) {
+            [self showErrorWithMsg:@"At Least two option should be specified"];
+            return NO;
+        }
+        
+        //ALL GOOD
+        //Update the Mission object
+        self.mMission.mOptions = options;
+    }
+    
+    return YES;
+}
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
