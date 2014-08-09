@@ -8,14 +8,14 @@
 
 #import "Mission.h"
 
-@interface Rating : NSObject
+@interface Rating : NSObject <NSCoding>
 
 @property (nonatomic, strong) Option *mOption;
 @property (nonatomic, strong) Criterion *mCriterion;
 @property (nonatomic, strong) NSNumber *mValue;
 @end
 
-@interface CriterionOrder : NSObject
+@interface CriterionOrder : NSObject <NSCoding>
 
 @property (nonatomic, strong) Criterion *mCriterionA;
 @property (nonatomic, strong) Criterion *mCriterionB;
@@ -230,6 +230,29 @@
     return bestOption;
 }
 
+#pragma mark - NSCoding protocol
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.mTitle forKey:@"Title"];
+    [encoder encodeObject:self.mOptions forKey:@"OptionsArr"];
+    [encoder encodeObject:self.mCriterions forKey:@"CriterionsArr"];
+    [encoder encodeObject:ratings forKey:@"OptionsRatings"];
+    [encoder encodeObject:criterionOrders forKey:@"CriterionsOrder"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self) {
+        self.mTitle = [aDecoder decodeObjectForKey:@"Title"];
+        self.mOptions = [aDecoder decodeObjectForKey:@"OptionsArr"];
+        self.mCriterions = [aDecoder decodeObjectForKey:@"CriterionsArr"];
+        ratings = [aDecoder decodeObjectForKey:@"OptionsRatings"];
+        criterionOrders = [aDecoder decodeObjectForKey:@"CriterionsOrder"];
+    }
+    return self;
+}
+
 #pragma mark - properties setters and getters
 -(void)setMCriterions:(NSArray *)mCriterions
 {
@@ -321,6 +344,25 @@
     NSString *str = [NSString stringWithFormat:@"[%@]->Cr[%@]Op[%@]",_mValue,_mCriterion,_mOption];
     return str;
 }
+
+#pragma mark - NSCoding protocol
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.mCriterion forKey:@"Criterion"];
+    [encoder encodeObject:self.mOption forKey:@"Option"];
+    [encoder encodeObject:self.mValue forKey:@"RatingVal"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self) {
+        self.mCriterion = [aDecoder decodeObjectForKey:@"Criterion"];
+        self.mOption = [aDecoder decodeObjectForKey:@"Option"];
+        self.mValue = [aDecoder decodeObjectForKey:@"RatingVal"];
+    }
+    return self;
+}
 @end
 
 @implementation CriterionOrder
@@ -328,12 +370,61 @@
     NSString *str = [NSString stringWithFormat:@"[%d]->CrA[%@]crB[%@]",_mOrder,_mCriterionA,_mCriterionB];
     return str;
 }
+
+#pragma mark - NSCoding protocol
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.mCriterionA forKey:@"CriterionA"];
+    [encoder encodeObject:self.mCriterionB forKey:@"CriterionB"];
+    [encoder encodeObject:@(self.mOrder) forKey:@"Order"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self) {
+        self.mCriterionA = [aDecoder decodeObjectForKey:@"CriterionA"];
+        self.mCriterionB = [aDecoder decodeObjectForKey:@"CriterionB"];
+        self.mOrder = [[aDecoder decodeObjectForKey:@"Order"] integerValue];
+    }
+    return self;
+}
 @end
 
 @implementation Option
 -(NSString *)description { return _mTitle; }
+
+#pragma mark - NSCoding protocol
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.mTitle forKey:@"OptionTitle"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self) {
+        self.mTitle = [aDecoder decodeObjectForKey:@"OptionTitle"];
+    }
+    return self;
+}
 @end
 
 @implementation Criterion
 -(NSString *)description { return _mTitle; }
+
+#pragma mark - NSCoding protocol
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.mTitle forKey:@"CriterionTitle"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self) {
+        self.mTitle = [aDecoder decodeObjectForKey:@"CriterionTitle"];
+    }
+    return self;
+}
 @end

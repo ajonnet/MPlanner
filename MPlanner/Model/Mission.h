@@ -11,7 +11,7 @@
 @class Option;
 @class Criterion;
 
-@interface Mission : NSObject
+@interface Mission : NSObject <NSCoding>
 
 @property (nonatomic, strong)   NSString *mTitle;
 @property (nonatomic, strong)   NSArray  *mOptions;
@@ -34,12 +34,12 @@
 -(Option *) renderBestOption;
 @end
 
-@interface Option : NSObject
+@interface Option : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *mTitle;
 @end
 
-@interface Criterion : NSObject
+@interface Criterion : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *mTitle;
 @end
