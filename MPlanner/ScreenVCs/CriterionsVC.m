@@ -14,7 +14,7 @@
     NSMutableArray *criterions;
     NSMutableArray *optionRatings;
     
-    NSArray *defaultOptionRatings;
+    NSMutableArray *defaultOptionRatings;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *tableV;
@@ -38,21 +38,70 @@
     for (int j=0; j<self.mMission.mOptions.count; j++) {
         [ratings addObject:@(0)];
     }
-    defaultOptionRatings = [NSArray arrayWithArray:ratings];
+    defaultOptionRatings = ratings;
+    
     
     //Initializing OptionRatings
     optionRatings = [NSMutableArray array];
     for (int i =0; i<criterions.count; i++) {
-        [optionRatings addObject:[defaultOptionRatings copy]];
+        [optionRatings addObject:[defaultOptionRatings mutableCopy]];
     }
 }
 
 #pragma mark - IBAction methods
 - (IBAction)onAddOptionBtClick:(id)sender {
     [criterions addObject:[[Criterion alloc] init]];
-    [optionRatings addObject:[defaultOptionRatings copy]];
+    [optionRatings addObject:[defaultOptionRatings mutableCopy]];
     
     [self.tableV reloadData];
+}
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:NextBtId]) {
+        CustomVC *vc = [segue destinationViewController];
+        vc.mMission = self.mMission;
+    }
+}
+
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([identifier isEqualToString:NextBtId]) {
+        
+        //No Option should be with empty title
+        for (Criterion *crtn in criterions) {
+            
+            crtn.mTitle = [crtn.mTitle stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            if (crtn.mTitle.length == 0) {
+                [self showErrorWithMsg:@"Title is reuqired for Criterion"];
+                return NO;
+            }
+        }
+        
+        //ALL GOOD
+        //Add the Criterions
+        self.mMission.mCriterions = criterions;
+        
+        //Setting rating for each option for each criterion
+        for (int i =0; i < criterions.count; i++) {
+            
+            Criterion *crtnObj = [criterions objectAtIndex:i];
+            for (int j=0; j< self.mMission.mOptions.count; j++) {
+                
+                Option *optObj = [self.mMission.mOptions objectAtIndex:j];
+                NSNumber *rating = optionRatings[i][j];;
+            
+                [self.mMission setRating:rating ofCriterion:crtnObj forOption:optObj];
+                //NSLog(@"%@-> %@-> %@",crtnObj,optObj,rating);
+            }
+        }
+    }
+    
+    return YES;
 }
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource

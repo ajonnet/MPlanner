@@ -15,7 +15,7 @@
 @property (nonatomic, readwrite) NSUInteger mIdx;
 @property (nonatomic, strong) Criterion *mCriterion;
 @property (nonatomic, strong) NSArray *mOptions;
-@property (nonatomic, strong) NSArray *mRatings;
+@property (nonatomic, strong) NSMutableArray *mRatings;
 
 @property (nonatomic, weak) id<CriteriaInputVDelegate> delegate;
 

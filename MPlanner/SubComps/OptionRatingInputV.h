@@ -8,10 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol OptionRatingInputVDelegate;
+
 @interface OptionRatingInputV : UIView
 
 @property (nonatomic, strong) Option *mOption;
 @property (nonatomic, readwrite) NSUInteger mRating;
+@property (nonatomic, weak) id<OptionRatingInputVDelegate> delegate;
 
 +(OptionRatingInputV *) getInstance;
+@end
+
+@protocol OptionRatingInputVDelegate <NSObject>
+
+-(void) ratingChangedForOptionRatingInputV:(OptionRatingInputV *) obj;
+
 @end

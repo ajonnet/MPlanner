@@ -48,8 +48,15 @@
     
     NSUInteger val = (NSUInteger)roundf(sender.value);
     
+    _mRating = val;
+    
     //Updating the Rating Lbl
     self.lblRating.text = [NSString stringWithFormat:@"%d",val];
+    
+    //Notify the delegate
+    if (self.delegate && [self.delegate respondsToSelector:@selector(ratingChangedForOptionRatingInputV:)]) {
+        [self.delegate ratingChangedForOptionRatingInputV:self];
+    }
 }
 
 #pragma mark - Properties setters and getters
@@ -59,6 +66,19 @@
     
     //Updating the Option Title
     self.lblOptionTitle.text = mOption.mTitle;
+}
+
+-(void)setMRating:(NSUInteger)mRating
+{
+    NSUInteger val = (NSUInteger)roundf(mRating);
+    
+    _mRating = val;
+    
+    //Update the slider value
+    self.sliderRating.value = val;
+    
+    //Updating the Rating Lbl
+    self.lblRating.text = [NSString stringWithFormat:@"%d",val];
 }
 
 #pragma mark - private methods

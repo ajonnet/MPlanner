@@ -9,7 +9,7 @@
 #import "CriteriaInputV.h"
 #import "OptionRatingInputV.h"
 
-@interface CriteriaInputV ()
+@interface CriteriaInputV () <OptionRatingInputVDelegate>
 {
     NSArray *optionRatingVArray;
 }
@@ -80,8 +80,10 @@
     [self renderViewForOptions:mOptions];
 }
 
--(void)setMRatings:(NSArray *)mRatings
+-(void)setMRatings:(NSMutableArray *)mRatings
 {
+    _mRatings = mRatings;
+    
     //Update ratings for various Option Items
     for (int i =0; i< mRatings.count; i++) {
         NSNumber *rating = [mRatings objectAtIndex:i];
@@ -90,18 +92,6 @@
     }
 }
 
--(NSArray *)mRatings
-{
-    NSMutableArray *ratingsArray = [NSMutableArray array];
-    
-    //Getting value of ratings from various optionRatingInputV
-    for (int i =0; i< optionRatingVArray.count; i++) {
-        OptionRatingInputV *v = [optionRatingVArray objectAtIndex:i];
-        [ratingsArray addObject:@(v.mRating)];
-    }
-    
-    return ratingsArray;
-}
 
 #pragma mark - Private methods
 -(void) renderViewForOptions:(NSArray *) options
@@ -122,6 +112,7 @@
         OptionRatingInputV *v = [OptionRatingInputV getInstance];
         v.mOption = optionObj;
         v.mRating = 0;
+        v.delegate = self;
         
         //Adding the view to the Place Holder
         [self.OptionsRatingPlaceHolderV addSubview:v];
@@ -151,6 +142,13 @@
     rect = self.frame;
     rect.size.height += changeInHeight;
     self.frame = rect;
+}
+
+#pragma mark - OptionRatingInputVDelegate methods
+-(void) ratingChangedForOptionRatingInputV:(OptionRatingInputV *) obj
+{
+    NSUInteger idx = [self.mOptions indexOfObject:obj.mOption];
+    [_mRatings replaceObjectAtIndex:idx withObject:@(obj.mRating)];
 }
 
 #pragma mark - UITextFieldDelegate methods
