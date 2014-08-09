@@ -13,4 +13,5 @@
 @property (nonatomic,copy) NSArray *inputItems;
 @property (nonatomic,strong) UIScrollView *hostingSCVW;
 @property (nonatomic, readwrite) BOOL showNavigationAccessory;
+@property (nonatomic, readwrite) BOOL autoSortInputItems;
 @end

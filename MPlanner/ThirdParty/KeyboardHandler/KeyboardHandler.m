@@ -47,6 +47,7 @@
     if (self) {
         self->keyboardHasAppeard = NO;
         self->_showNavigationAccessory = YES;
+        self->_autoSortInputItems = NO;
     }
     return self;
 }
@@ -59,25 +60,32 @@
 -(void)setInputItems:(NSArray *)inputItems{
     _inputItems = nil;
     
-    //Sort the input Items in XY Space from Top to bottom and Left to Right
-    NSArray *sortedInputItems = [inputItems sortedArrayUsingComparator:^NSComparisonResult(UIView *obj1, UIView *obj2) {
-        NSComparisonResult result = NSOrderedAscending;
+    _inputItems = inputItems;
+    
+    //AutoSort
+    if (self.autoSortInputItems) {
         
-        if (obj1.frame.origin.y >= obj2.frame.origin.y) {
-            if (obj1.frame.origin.y == obj2.frame.origin.y) {
-                if (obj1.frame.origin.x >= obj2.frame.origin.x) {
-                    result = NSOrderedDescending;
+        //Sort the input Items in XY Space from Top to bottom and Left to Right
+        NSArray *sortedInputItems = [inputItems sortedArrayUsingComparator:^NSComparisonResult(UIView *obj1, UIView *obj2) {
+            NSComparisonResult result = NSOrderedAscending;
+            
+            if (obj1.frame.origin.y >= obj2.frame.origin.y) {
+                if (obj1.frame.origin.y == obj2.frame.origin.y) {
+                    if (obj1.frame.origin.x >= obj2.frame.origin.x) {
+                        result = NSOrderedDescending;
+                    }else {
+                        result = NSOrderedAscending;
+                    }
                 }else {
-                    result = NSOrderedAscending;
+                    result = NSOrderedDescending;
                 }
-            }else {
-                result = NSOrderedDescending;
             }
-        }
-        
-        return result;
-    }];
-    _inputItems = sortedInputItems;
+            
+            return result;
+        }];
+        _inputItems = sortedInputItems;
+    }
+
     
     //Register Notifications for the inputItems
     for (UITextField *tf in _inputItems) {
