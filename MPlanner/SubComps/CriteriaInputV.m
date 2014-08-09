@@ -69,7 +69,7 @@
     _mIdx = mIdx;
     
     //Updating Idx Label
-    self.lblCriteriaIdx.text = [NSString stringWithFormat:@"%d",mIdx];
+    self.lblCriteriaIdx.text = [NSString stringWithFormat:@"Criterion %d",mIdx];
 }
 
 -(void)setMOptions:(NSArray *)mOptions
@@ -102,7 +102,6 @@
     
     return ratingsArray;
 }
-
 
 #pragma mark - Private methods
 -(void) renderViewForOptions:(NSArray *) options
@@ -140,12 +139,28 @@
     
     optionRatingVArray = viewArr;
     
+    //Calculate the change in height
+    CGFloat changeInHeight = nextVOrigin.y;
+    
     //Resize the placeholder View
     CGRect rect = self.OptionsRatingPlaceHolderV.frame;
-    rect.size.height = nextVOrigin.y;
+    rect.size.height += changeInHeight;
+    self.OptionsRatingPlaceHolderV.frame = rect;
     
     //Resize the self view
     rect = self.frame;
-    rect.size.height = CGRectGetMaxY(self.OptionsRatingPlaceHolderV.frame);
+    rect.size.height += changeInHeight;
+    self.frame = rect;
+}
+
+#pragma mark - UITextFieldDelegate methods
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    
+    //Reflect the updated text in mOption
+    _mCriterion.mTitle = newString;
+    
+    return YES;
 }
 @end

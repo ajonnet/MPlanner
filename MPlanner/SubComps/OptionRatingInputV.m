@@ -64,7 +64,7 @@
 #pragma mark - private methods
 -(void) baseInit
 {
-    self.sliderRating.continuous = NO;
+    self.sliderRating.continuous = YES;
 }
 
 @end
