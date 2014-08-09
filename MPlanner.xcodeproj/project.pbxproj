@@ -17,6 +17,8 @@
 		2855AC4119853B420000D2CC /* KeyboardHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2855AC4019853B420000D2CC /* KeyboardHandler.m */; };
 		288D01A3199648EC0011EA02 /* KeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288D01A2199648EC0011EA02 /* KeyboardManager.framework */; };
 		288D01A5199649190011EA02 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 288D01A4199649190011EA02 /* IQKeyboardManager.bundle */; };
+		288D01A91996A8220011EA02 /* OrderInputV.m in Sources */ = {isa = PBXBuildFile; fileRef = 288D01A81996A8220011EA02 /* OrderInputV.m */; };
+		288D01AB1996A8330011EA02 /* OrderInputV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288D01AA1996A8330011EA02 /* OrderInputV.xib */; };
 		2895E0CF197B9D0900107C78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2895E0CE197B9D0900107C78 /* Foundation.framework */; };
 		2895E0D1197B9D0900107C78 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2895E0D0197B9D0900107C78 /* CoreGraphics.framework */; };
 		2895E0D3197B9D0900107C78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2895E0D2197B9D0900107C78 /* UIKit.framework */; };
@@ -67,6 +69,9 @@
 		2855AC4019853B420000D2CC /* KeyboardHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardHandler.m; sourceTree = "<group>"; };
 		288D01A2199648EC0011EA02 /* KeyboardManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeyboardManager.framework; path = "../../Third Party Libraries/IQKeyboardManager-master/IQKeyboardManager Framework/KeyboardManager.framework"; sourceTree = "<group>"; };
 		288D01A4199649190011EA02 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = IQKeyboardManager.bundle; path = "../../../../Third Party Libraries/IQKeyboardManager-master/IQKeyboardManager Framework/IQKeyboardManager.bundle"; sourceTree = "<group>"; };
+		288D01A71996A8220011EA02 /* OrderInputV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderInputV.h; sourceTree = "<group>"; };
+		288D01A81996A8220011EA02 /* OrderInputV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderInputV.m; sourceTree = "<group>"; };
+		288D01AA1996A8330011EA02 /* OrderInputV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderInputV.xib; sourceTree = "<group>"; };
 		2895E0CB197B9D0900107C78 /* MPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2895E0CE197B9D0900107C78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2895E0D0197B9D0900107C78 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +136,7 @@
 		281BC91D198CFC4E007D904E /* SubComps */ = {
 			isa = PBXGroup;
 			children = (
+				288D01A61996A7E30011EA02 /* OrderInputV */,
 				281BC923198D05D4007D904E /* OptionInputV */,
 				281BC929198D0963007D904E /* CriteriaInputV */,
 			);
@@ -166,6 +172,16 @@
 				281BC92D198D09C8007D904E /* OptionRatingInputV.m */,
 			);
 			name = OptionRatingInputV;
+			sourceTree = "<group>";
+		};
+		288D01A61996A7E30011EA02 /* OrderInputV */ = {
+			isa = PBXGroup;
+			children = (
+				288D01A71996A8220011EA02 /* OrderInputV.h */,
+				288D01A81996A8220011EA02 /* OrderInputV.m */,
+				288D01AA1996A8330011EA02 /* OrderInputV.xib */,
+			);
+			name = OrderInputV;
 			sourceTree = "<group>";
 		};
 		2895E0C2197B9D0900107C78 = {
@@ -384,6 +400,7 @@
 				281BC91F198CFC92007D904E /* OptionInputV.xib in Resources */,
 				2895E0D9197B9D0900107C78 /* InfoPlist.strings in Resources */,
 				281BC925198D06E4007D904E /* CriteriaInputV.xib in Resources */,
+				288D01AB1996A8330011EA02 /* OrderInputV.xib in Resources */,
 				288D01A5199649190011EA02 /* IQKeyboardManager.bundle in Resources */,
 				2895E0E2197B9D0900107C78 /* Main.storyboard in Resources */,
 			);
@@ -409,6 +426,7 @@
 				2895E0DF197B9D0900107C78 /* AppDelegate.m in Sources */,
 				2855AC4119853B420000D2CC /* KeyboardHandler.m in Sources */,
 				2895E106197BBCB900107C78 /* Mission.m in Sources */,
+				288D01A91996A8220011EA02 /* OrderInputV.m in Sources */,
 				2895E116197BCBAB00107C78 /* PrioritizeVC.m in Sources */,
 				281BC928198D084B007D904E /* CriteriaInputV.m in Sources */,
 				2895E119197BCBBD00107C78 /* VerdictVC.m in Sources */,
