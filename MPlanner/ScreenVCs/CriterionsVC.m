@@ -96,7 +96,9 @@
                 NSNumber *rating = optionRatings[i][j];;
             
                 [self.mMission setRating:rating ofCriterion:crtnObj forOption:optObj];
-                //NSLog(@"%@-> %@-> %@",crtnObj,optObj,rating);
+                //NSNumber *obj = [self.mMission getRatingOfCriterion:crtnObj forOption:optObj];
+                //NSLog(@"%@-> %@-> %@,%@",crtnObj,optObj,rating,obj);
+                
             }
         }
     }
