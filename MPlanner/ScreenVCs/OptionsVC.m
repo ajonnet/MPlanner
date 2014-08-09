@@ -7,43 +7,87 @@
 //
 
 #import "OptionsVC.h"
+#import "OptionInputV.h"
 
-@interface OptionsVC ()
+@interface OptionsVC () <UITableViewDelegate, UITableViewDataSource,OptionInputVDelegate>
+{
+    NSMutableArray *options;
+}
 
+@property (weak, nonatomic) IBOutlet UITableView *tableV;
 @end
 
 @implementation OptionsVC
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    //Initializing Options array
+    options = [NSMutableArray array];
+    [options addObject:[[Option alloc] init]];
+    [options addObject:[[Option alloc] init]];
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - IBAction methods
+- (IBAction)onAddOptionBtClick:(id)sender {
+    [options addObject:[[Option alloc] init]];
+    [self.tableV reloadData];
+}
+
+
+#pragma mark - UITableViewDelegate, UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return options.count;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    static float height;
+    static BOOL heightDefined;
+    
+    //Evaluating Height from instance of OptionInputV
+    if (!heightDefined) {
+        heightDefined = YES;
+        UIView *v = [OptionInputV getInstance];
+        height = v.frame.size.height;
+    }
+    
+    return height;
 }
-*/
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *cellIdentifier = @"OptionInputVCell";
+    
+    //Loading the Cell
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell.clipsToBounds = YES;
+        
+        OptionInputV *optionInputV = [OptionInputV getInstance];
+        optionInputV.tag = 99;
+        optionInputV.delegate = self;
+        [cell.contentView addSubview:optionInputV];
+    }
+    
+    //Defining contents of Cell
+    OptionInputV *v = (OptionInputV *)[cell viewWithTag:99];
+    v.mOption = [options objectAtIndex:indexPath.row];
+    v.mIdx = indexPath.row + 1;
+    
+    return cell;
+}
+
+#pragma mark - OptionInputVDelegate methods
+-(void) removeCalledForOptionInputV:(OptionInputV *) obj
+{
+    [options removeObject:obj.mOption];
+    [self.tableV reloadData];
+    
+}
 
 @end
