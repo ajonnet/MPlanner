@@ -15,6 +15,8 @@
 		281BC92E198D09C8007D904E /* OptionRatingInputV.m in Sources */ = {isa = PBXBuildFile; fileRef = 281BC92D198D09C8007D904E /* OptionRatingInputV.m */; };
 		2855AC3E19852C740000D2CC /* MissionTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2855AC3D19852C740000D2CC /* MissionTest.m */; };
 		2855AC4119853B420000D2CC /* KeyboardHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2855AC4019853B420000D2CC /* KeyboardHandler.m */; };
+		288D01A3199648EC0011EA02 /* KeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288D01A2199648EC0011EA02 /* KeyboardManager.framework */; };
+		288D01A5199649190011EA02 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 288D01A4199649190011EA02 /* IQKeyboardManager.bundle */; };
 		2895E0CF197B9D0900107C78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2895E0CE197B9D0900107C78 /* Foundation.framework */; };
 		2895E0D1197B9D0900107C78 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2895E0D0197B9D0900107C78 /* CoreGraphics.framework */; };
 		2895E0D3197B9D0900107C78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2895E0D2197B9D0900107C78 /* UIKit.framework */; };
@@ -63,6 +65,8 @@
 		2855AC3D19852C740000D2CC /* MissionTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissionTest.m; sourceTree = "<group>"; };
 		2855AC3F19853B420000D2CC /* KeyboardHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardHandler.h; sourceTree = "<group>"; };
 		2855AC4019853B420000D2CC /* KeyboardHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardHandler.m; sourceTree = "<group>"; };
+		288D01A2199648EC0011EA02 /* KeyboardManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeyboardManager.framework; path = "../../Third Party Libraries/IQKeyboardManager-master/IQKeyboardManager Framework/KeyboardManager.framework"; sourceTree = "<group>"; };
+		288D01A4199649190011EA02 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = IQKeyboardManager.bundle; path = "../../../../Third Party Libraries/IQKeyboardManager-master/IQKeyboardManager Framework/IQKeyboardManager.bundle"; sourceTree = "<group>"; };
 		2895E0CB197B9D0900107C78 /* MPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2895E0CE197B9D0900107C78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2895E0D0197B9D0900107C78 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -104,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				288D01A3199648EC0011EA02 /* KeyboardManager.framework in Frameworks */,
 				2895E0D1197B9D0900107C78 /* CoreGraphics.framework in Frameworks */,
 				2895E0D3197B9D0900107C78 /* UIKit.framework in Frameworks */,
 				2895E0CF197B9D0900107C78 /* Foundation.framework in Frameworks */,
@@ -185,6 +190,7 @@
 		2895E0CD197B9D0900107C78 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				288D01A2199648EC0011EA02 /* KeyboardManager.framework */,
 				2895E0CE197B9D0900107C78 /* Foundation.framework */,
 				2895E0D0197B9D0900107C78 /* CoreGraphics.framework */,
 				2895E0D2197B9D0900107C78 /* UIKit.framework */,
@@ -280,6 +286,7 @@
 		2895E11D197BF1B600107C78 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				288D01A4199649190011EA02 /* IQKeyboardManager.bundle */,
 				2895E11E197BF22B00107C78 /* KeyboardHandler */,
 			);
 			path = ThirdParty;
@@ -377,6 +384,7 @@
 				281BC91F198CFC92007D904E /* OptionInputV.xib in Resources */,
 				2895E0D9197B9D0900107C78 /* InfoPlist.strings in Resources */,
 				281BC925198D06E4007D904E /* CriteriaInputV.xib in Resources */,
+				288D01A5199649190011EA02 /* IQKeyboardManager.bundle in Resources */,
 				2895E0E2197B9D0900107C78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,10 +544,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Amit/Documents/Third,
+					Party,
+					"Libraries/IQKeyboardManager-master/IQKeyboardManager",
+					Framework,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MPlanner/MPlanner-Prefix.pch";
 				INFOPLIST_FILE = "MPlanner/MPlanner-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -550,10 +566,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Amit/Documents/Third,
+					Party,
+					"Libraries/IQKeyboardManager-master/IQKeyboardManager",
+					Framework,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MPlanner/MPlanner-Prefix.pch";
 				INFOPLIST_FILE = "MPlanner/MPlanner-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
