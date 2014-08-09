@@ -7,12 +7,16 @@
 //
 
 #import "AppDelegate.h"
+#import <KeyboardManager/KeyboardManager.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [IQKeyboardManager sharedManager].shouldShowTextFieldPlaceholder = NO;
+    
     return YES;
 }
 							
