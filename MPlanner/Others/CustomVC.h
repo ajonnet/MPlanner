@@ -10,6 +10,7 @@
 #import "Mission.h"
 
 #define NextBtId @"NextBt"
+#define DetailsBtId @"DetailsBt"
 
 @interface CustomVC : UIViewController
 
