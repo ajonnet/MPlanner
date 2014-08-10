@@ -8,6 +8,18 @@
 
 #import "Mission.h"
 
+@interface Criterion()
+
+@property (nonatomic, readwrite, strong) NSNumber *mRelativeWeight;
+@property (nonatomic, readwrite, strong) NSNumber *mMaxWeight;
+@end
+
+@interface Option()
+
+@property (nonatomic, readwrite, strong) NSNumber *mRelativeWeight;
+@property (nonatomic, readwrite, strong) NSNumber *mMaxWeight;
+@end
+
 @interface Rating : NSObject <NSCoding>
 
 @property (nonatomic, strong) Option *mOption;
@@ -170,6 +182,8 @@
             weight+=relWeight;
         }
         
+        criterionA.mMaxWeight = @(_mCriterions.count - 1);
+        criterionA.mRelativeWeight = @(weight);
         [relativeWeights addObject:@(weight)];
     }
     
@@ -195,6 +209,8 @@
             weight += criterionRating * criterionRelativeWeight;
         }
         
+        optionObj.mMaxWeight = @(10 * (_mCriterions.count -1));
+        optionObj.mRelativeWeight = @(weight);
         [optionWeights addObject:@(weight)];
     }
     

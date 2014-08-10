@@ -37,9 +37,13 @@
 @interface Option : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *mTitle;
+@property (nonatomic, readonly, strong) NSNumber *mRelativeWeight;
+@property (nonatomic, readonly, strong) NSNumber *mMaxWeight;
 @end
 
 @interface Criterion : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *mTitle;
+@property (nonatomic, readonly, strong) NSNumber *mRelativeWeight;
+@property (nonatomic, readonly, strong) NSNumber *mMaxWeight;
 @end
